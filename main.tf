@@ -1,18 +1,8 @@
 terraform {
-  required_version = ">=0.12"
-
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "~>2.0"
-    }
-    random = {
-      source  = "hashicorp/random"
-      version = "~>3.0"
-    }
-    tls = {
-      source = "hashicorp/tls"
-      version = "~>4.0"
+      version = "=2.63.0"
     }
   }
 }
@@ -21,11 +11,7 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "rg" {
-   name = "srey"
-   location = "East US"
-}
-
-output "id" {
-   value = data.azurerm_resource_group.rg.id
+resource "azurerm_resource_group" "demo-rg" {
+  name     = "demo-resource-group"
+  location = "eastus"
 }
