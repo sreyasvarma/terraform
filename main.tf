@@ -15,3 +15,5 @@ resource "azurerm_resource_group" "demo-rg" {
   name     = "demo-resource-group"
   location = "eastus"
 }
+
+#test comment
